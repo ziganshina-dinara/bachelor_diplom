@@ -1,16 +1,10 @@
 \documentclass[a4paper, 14pt]{article}
 \usepackage{style}
+\usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage[backend=biber, sorting=none]{biblatex}
 \usepackage{csquotes}
 \usepackage{fancyhdr}
-
-\fancypagestyle{bib}{
-	\fancyhf{}
-	\rhead{\scshape\it{{СПИСОК ЛИТЕРАТУРЫ}}}
-	\fancyfoot[C]{\thepage}
-	\renewcommand{\headrulewidth}{0.4pt}
-}
 
 \pagestyle{fancy}
 \delimitershortfall-1sp
@@ -19,13 +13,12 @@
 \setlength{\parindent}{1.25ex}
 
 \newcommand{\anonsection}[1]{
-    \phantomsection % Корректный переход по ссылкам в содержании
-    \section*{#1}
-    \addcontentsline{toc}{section}{\uppercase{#1}}
+\phantomsection % Корректный переход по ссылкам в содержании
+\section*{#1}
+\addcontentsline{toc}{section}{\uppercase{#1}}
 }
 
 \addbibresource{references.bib}
-\renewcommand\refname{Список использованных источников}
 
 \begin{document}
 \maketitle
@@ -44,8 +37,8 @@
 \newpage
 
 \subfile{materials_and_methods}
-\newpage  
- 
+\newpage
+
 \subfile{results}
 \newpage
 
@@ -56,8 +49,6 @@
 \nocite{*}
 \newpage
 
-\pagestyle{bib} 
-\anonsection{Список использованных источников}
+\section{Список литературы}
 \printbibliography[heading=none]
-
 \end{document}
